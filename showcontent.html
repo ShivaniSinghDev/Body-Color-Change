@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: black;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            /* background-color: rgb(172, 179, 179); */
+            border: 2px solid white;
+            position: absolute;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            overflow: hidden;
+             box-shadow: 5px 5px 10px rgb(175, 133, 133) 
+        }
+        .content{
+            border: 2px solid red;
+            height: 100vh;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="content">
+            <h1>Lorem ipsum Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum esse molestiae porro iure eligendi accusantium velit dignissimos, consequuntur corrupti tempore, rerum libero eum veniam quisquam quo doloremque doloribus vitae eaque hic. Eaque expedita cumque consectetur autem illo quidem nostrum et suscipit atque? Tenetur error explicabo, commodi veritatis laboriosam sint ut dolorum repellendus laborum, consequatur sapiente nisi quibusdam aliquam molestias reiciendis doloremque impedit nobis quaerat dignissimos accusantium possimus, aut illo pariatur. Et sunt voluptatem quo architecto eius eum voluptas quis quia beatae autem illum aperiam, vel animi laboriosam excepturi enim placeat exercitationem. Aliquid fugiat officia nam optio nemo soluta? Dicta non maxime aperiam dolorum tempore eum beatae reprehenderit. Cumque, ducimus? Nihil, repudiandae. Possimus ut laborum, voluptatem eum obcaecati porro voluptates amet tempora tenetur fugiat repellendus distinctio nulla qui quo. Iusto eos quos ullam animi! Hic ipsam ab delectus aut deserunt sint, expedita nulla saepe aliquid cum voluptatibus nihil officiis minima suscipit laudantium libero in debitis itaque autem, accusantium laboriosam. Neque autem ipsam quasi dolor? Saepe maiores, rem esse enim eaque, corrupti a atque sit commodi, accusantium iste repellendus maxime ipsam numquam soluta et cum est aperiam distinctio odit quam iure qui. Fugit reprehenderit impedit voluptate illo hic harum, aliquam et quaerat! dolor sit amet consectetur adipisicing elit. Vero at nostrum a eligendi non dolores ipsam cupiditate veritatis suscipit temporibus?</h1>
+        </div>
+    </div>
+    <script>
+        let box = document.querySelector(".box")
+        let content = document.querySelector(".content")
+        console.log(box)
+        console.log(content);
+        
+
+        document.addEventListener("mousemove", function (e) {
+            console.clear()
+            console.log("X :" + e.clientX);
+            console.log("Y :" + e.clientY);
+
+
+            box.style.left = `${e.clientX - 100}px`
+            box.style.top = `${e.clientY - 100}px`
+
+            content.style.left = `${-(e.clientX - 100)}px`
+            content.style.top = `${-(e.clientY - 100)}px`
+        })
+    </script>
+</body>
+
+</html>

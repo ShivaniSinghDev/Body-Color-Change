@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           
+        }
+        .body{
+            width: 100vw;
+            border: 2px solid red;
+           
+
+        }
+        .main-box{
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+             margin: 50px auto; 
+             box-shadow: 0px 0px 4px 4px lightseagreen,0px 0px 4px 4px  lightseagreen inset;
+            border-radius: 8px;
+        }
+        .up{
+        
+            font-size: 20px;
+            width: 150px;
+            height: 50px;
+            position: absolute;
+            left: 350px;
+            top: 200px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px 4px lightseagreen,0px 0px 4px 4px  lightseagreen inset;
+             border: 2px solid black;
+
+            
+
+        }
+        .down{
+        font-size: 20px;
+        width: 150px;
+        height: 50px;
+        position: absolute;
+        right: 350px;
+        top: 200px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 4px 4px lightseagreen,0px 0px 4px 4px  lightseagreen inset;
+
+        border: 2px solid black;
+    }
+
+        
+
+        
+        .start{
+             display: flex;
+            justify-content: center;
+            align-items: center; 
+            gap: 20px;  
+        }
+        .start1{
+            font-size: 20px;
+            padding: 10px;
+            width: 100px;
+            height: 50px;
+            box-shadow: 0px 0px 4px 4px lightseagreen,0px 0px 4px 4px  lightseagreen inset;
+            border-radius: 8px;
+            border: 2px solid black;
+
+        }
+        .pause{
+            font-size: 20px;
+            padding: 10px;
+            width: 100px;
+            height: 50px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px 4px lightseagreen,0px 0px 4px 4px  lightseagreen inset;
+            border: 2px solid black;
+
+
+        }
+        .reset{
+            font-size: 20px;
+            padding: 10px;
+            width: 100px;
+            height: 50px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px 4px lightseagreen,0px 0px 4px 4px  lightseagreen inset;
+            border: 2px solid black;
+
+
+        }
+        h1{
+            font-size: 50px;
+            margin-bottom: 25px;
+            text-shadow:  5px 4px 4px lightseagreen;
+        }
+        h4{
+            font-size: 40px;
+        }
+        
+        
+        
+        
+
+
+
+
+    </style>
+</head>
+<body>
+    <button class="up"> Count Up</button>
+    <button class="down"> Count Down  </button>
+
+    <div class="main-box">
+
+        <h1> Any Event</h1>
+        <h4 class="countBox">  00:00:00</h4>
+    </div>
+    <div class="start">
+    <button class="start1"> Start</button>
+    <button class="pause"> Pause</button>
+    <button class="reset">Reset </button>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+
+    <script>
+        let hours =0;
+        let min=0;
+        let sec=0;
+        let myInterval
+         function getStart(){
+               let newHours = (hours < 10) ? `0${hours}` : `${hours}`
+               let newMin=( min<10)?`0${min}`:`${min}`
+               let newSec=(sec<10)? `0${sec}`:`${sec}`
+               let time =`${newHours}:${newMin}:${newSec}`
+               $(".countBox").text(time)
+         }
+         getStart() 
+
+         $(".up").click(function () {
+            if(sec<=58){
+                sec++
+                getStart()
+            }
+            else{
+                sec = 0
+                if(min<=58){
+                    min++
+                    getStart()
+                }
+                else{
+                    min = 0
+                    hours++
+                    getStart()
+                }
+            }
+        })
+
+        $(".down").click(function(){
+            if( sec > 0)
+            sec--
+             getStart()
+        })
+
+        
+        $(".start1").click(function () {
+            myIntervel = setInterval(() => {
+                if (sec > 0) {
+                    sec--
+                    getStart()
+                }
+            })
+              
+        })
+
+        $(".pause").click(function () {
+            clearInterval(myIntervel)
+        })
+        
+        $(".reset").click(function () {
+            hours = 0
+            min = 0
+            sec = 0
+            getStart()
+           
+            
+        })
+
+  
+
+        
+    
+
+
+
+         
+
+
+        
+
+       
+
+
+    </script>
+
+    
+</body>
+</html>

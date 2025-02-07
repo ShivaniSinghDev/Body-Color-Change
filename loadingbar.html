@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main-box{
+        width: 500px;
+        height: 300px;
+        background-color: gray;
+        position: absolute;
+        top: 70px;
+        left: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* box-shadow: 5px 5px 30px black; */
+    }
+    .scroller{
+        width: 450px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50px;
+        /* box-shadow: 0 0 10px white; */
+        overflow: hidden;
+        position: sticky;
+
+
+    }
+    .load{
+        width: 1%;
+        height: 100%;
+        background-color: orangered;
+        
+
+    }
+    h1{
+        color: red;
+        padding-top: 25px;
+    }
+    button{
+        border: 2px solid red;
+        padding: 7px ;
+        font-size: 15px;
+        border-radius: 50px;
+        margin-top: 50px;
+        background-color: black;
+        color: white;
+    }
+    .status-check{
+        position:absolute;
+        width: 300px;
+        height: 300px;
+        background-color: gray;
+        left: 100px;
+        top: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        border-radius: 20%;
+    }
+    i{
+        color: red;
+        width: 100px;
+        height: 100px;
+        /* border: 2px solid black; */
+        font-size: 100px;
+        position: absolute;
+        top: 50px;
+        left: 100px;
+        animation: animate 1s ease;
+    }
+    @keyframes animate{
+        0% { transform: translate(60px) scale(0.7) rotate(0deg);
+            opecity: 0.2;
+    }
+    50%{
+        transform:  scale(0.3) rotate(90deg) skewY(-40deg);
+        width:50px;
+
+    }
+    75%{
+        transform: scale(1.4) rotate(180deg) skewY(-20deg);
+    }
+    100%{
+        transform: translateY(0px)  scale(1) rotate(360deg);
+        
+    }
+}
+    p{
+        margin-top: 200px;
+        font-size: 23px;
+    }
+</style>
+<body>
+    <div class="main-box">
+        <div class="scroller" >
+            <div class="load"></div>
+        </div>
+        <h1> 0%</h1>
+        <button> CLICK TO LOAD</button>
+    </div>
+    <div class="status-check">
+        <i class="fa-regular fa-square-check"></i>
+        <p>  PROCESS IS COMPLETE !!</p>
+
+        <script>
+            let mainbox= document.querySelector(".main-box")
+            let scroller= document.querySelector(".scroller")
+            let load= document.querySelector(".load")
+            let icon= document.querySelector("i")
+            let button= document.querySelector("button")
+            let count= document.querySelector("h1")
+            let status= document.querySelector(".status-check")
+
+
+            button.addEventListener("click",()=>{
+                let a=0;
+                let go= setInterval(frames,70)
+            
+                function frames(){
+                    a=a+1;
+                    if(a==101){
+                        clearInterval(go);
+                        mainbox.style.display="none";
+                        status.style.display="block";
+
+                    }
+                    else{
+                      count.textContent=a +"%";
+                      load.style.width=a +"%";
+                    }
+
+                }
+            })
+
+        </script>
+    </div>
+</body>
+</html>

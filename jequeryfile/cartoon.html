@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+
+        .main-box {
+            height: 100vh;
+            border: 2px solid aqua;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            overflow-y: scroll;
+        }
+
+        .cartoon-card {
+            border: 2px solid black;
+            width: fit-content;
+            text-align: center;
+            padding-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .cartoon-card img {
+            width: 250px;
+        }
+
+        .title {
+            font-size: 20px;
+            margin-block: 15px;
+            padding-inline: 15px;
+        }
+
+        .content div {
+            font-size: 18px;
+        }
+
+        .release-year {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-box">
+        <!-- <div class="cartoon-card">
+            <img src="https://m.media-amazon.com/images/M/MV5BYjFkMTlkYWUtZWFhNy00M2FmLThiOTYtYTRiYjVlZWYxNmJkXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
+                alt="">
+            <div class="content">
+                <h4 class="title">Spongebob Squarepants</h4>
+                <div class="release-year"><b>Release Year : </b>1999</div>
+                <div class="total-episodes"><b>Total Episodes : </b>272</div>
+            </div>
+        </div> -->
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        let mainBox = document.querySelector(".main-box")
+
+        $.ajax({
+            url: "https://api.sampleapis.com/cartoons/cartoons2D",
+            method: "GET",
+            success: function (data) {
+                console.log(data);
+
+                data.forEach((item) => {
+                    // console.log(item.title);
+                    let title = item.title  
+                    let year = item.year                  
+                    let episodes = item.episodes
+                    let imgSrc = item.image
+                    let id = item.id
+
+                    if(!(id==1 || id==6 || id==8 || id==14 || id==22)){
+                        let newHtml = `
+                        <div class="cartoon-card">
+                            <img src="${imgSrc}"
+                                    alt="">
+                            <div class="content">
+                            <h4 class="title">${title}</h4>
+                            <div class="release-year"><b>Release Year : </b>${year}</div>
+                        <div class="total-episodes"><b>Total Episodes : </b>${episodes}</div>
+                        </div>
+                        </div>`
+                        
+                        mainBox.innerHTML += newHtml                    
+
+                    }
+
+                    
+
+                })
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
+    </script>
+</body>
+
+</html>
+        
+

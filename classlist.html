@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+       .green{ 
+        color: rgb(30, 199, 30) ;
+        }
+        /* .he{
+            color: springgreen;
+        } */
+    </style>
+</head>
+<body>
+    
+    <h1 class="he"> hello word</h1>
+    <p>Lorem ipsum dolor sit amet.</p>  
+    
+    
+
+    <script>
+        //class name 
+
+let head=document.getElementsByClassName("he")[0]
+// head.className="abc"
+// console.log(head.className)
+
+//class list   value same or class same 
+
+// console.log(head.classList);
+// let valid=head.classList.add("green")
+// console.log(valid); 
+
+
+
+// Remove
+ let valid=head.classList.remove("he")
+console.log( head.classList)
+
+
+//contain
+let con=head.classList.contains("green")
+console.log(con)
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      .box {
+          height: 200px;
+          width: 200px;
+          background-color: lightseagreen;
+          position: absolute; 
+      }
+
+      .box1 {
+          height: 200px;
+          width: 200px;
+          background-color: crimson;
+          position: fixed;
+          right: 20px;
+          top: 20px;
+      }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box1"></div>
+    <h1> hi this is shivani singh</h1>
+   
+    <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sint facilis quam ratione ad sit nihil aliquam beatae, voluptas tenetur sed illum deserunt libero sequi vitae praesentium explicabo facere nemo.</p>
+    
+    <!-- <div class="box">
+        <div> hello good morning</div>
+    </div>
+    <button class="hide"> hide</button>
+    <button class="show"> show</button>
+    <button class="toggle"> toggle</button>
+    <button class=" fadeout"> fadeout</button>
+    <button class=" fadein"> fadein</button>
+    <button class=" fadeto"> fadeto</button>
+    <button class=" fadetoggle"> fadetoggle</button>
+    <button class=" sideup"> sideup</button>
+
+     -->
+<!-- 
+    <fieldset>
+        <form class="newform">
+      Name:<input type="text" name=" name" id=""><br><br>
+       Email:<input type="email" name=" email" id=""><br><br>
+       Password<input type="password" name="password" id=""><br><br>
+       Submit <input type="submit" value="submit"><br><br>
+   
+    </form>
+
+    </fieldset> -->
+    
+    
+    
+    
+    
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js></script>
+  
+
+       //bytag
+        // let head= $("h1")[0]
+        // console.log(head)
+
+        //by class
+        // let head=$(".para")[0]
+        // console.log(head)
+          //by id (same process)
+          //decendent
+        //   let head= $(".box div")[0]
+        //   console.log(head)
+
+
+        //   $("h1").mouseenter (function(){
+        //     console.log("hi this is heading...")
+        //   })
+
+        //   $("h1").mouseout(function(){
+        //     console.log("mouse out of heading")
+
+        //   })
+       // effects
+
+       //hide
+        //  $(".hide").click(function(){
+        //   $("h1").hide(4000,)
+        //  })
+
+
+        // //show
+        // $(".show").click(function(){
+        //   $("h1").show(4000)
+        // })
+        // //toggle
+        // $(".toggle").click(function(){
+        //   $("h1").toggle(2000)
+        // })
+        //  //fadeout
+        // $(".fadeout").mouseenter(function(){
+        //   $("h1").fadeOut(2000)
+        // })
+
+
+        //  //fadein
+        // $(".fadein").mouseenter(function(){
+        //   $("h1").fadeIn(2000)
+        // })
+          
+
+        // $(".fadeto").mouseenter(function(){
+        //   $("h1").fadeTo(2000,.4)
+        // })
+
+        // $(".fadetoggle").click(function(){
+        //   $("h1").fadeToggle(2000)
+        // })
+
+        // //sideup
+        // $(".sideup").click(function(){
+        //   $("h1").slideUp(2000)
+        // })
+        <script>
+        $(".box").animate({
+            marginLeft:"150px",
+            marginTop:"150px",
+        }, 5000, function(){
+            $(".box").fadeOut(1000,function(){
+                $(".box1").slideUp(2000,function(){
+                    $(".box").fadeIn(2000,function(){
+                        $(".box").animate({
+                            marginLeft:"0",
+                            marginTop:"0"
+                        },2000,function(){
+                            $(".box1").slideDown(2000)
+                        })
+                    })
+                })
+            })
+        })
+    </script>
+
+
+
+
+
+     
+
+
+
+
+
+</body>
+</html>

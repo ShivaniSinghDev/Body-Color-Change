@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        
+        }
+
+        :root {
+            --main-box-color: rgb(37, 35, 35);
+            --text-color: white;
+            --main-color: orange;
+            --change-color:gray;
+        }
+
+        body.light {
+            --main-box-color: rgb(232, 228, 228);
+            --text-color: black;
+            --change-color:white;
+        }
+
+
+        body {
+            background-color: var(--main-box-color);
+            height: 100vh;
+            position: relative;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            padding-left: 260px;
+            transition: .6s;
+        }
+
+        .content-without-sidebar {
+            padding-left: 10px;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color:var(--change-color) ;
+            color:var(--text-color);
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            gap: 150px;
+            align-items: center;
+            top: 0;
+            left: 0;
+            transition: .6s;
+        }
+        
+        .sidebar span {
+            color: var(--text-color);
+            font-size: 30px;
+            background-color: gray;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+
+
+        .sidebar h1 {
+            font-size: 30px;
+            position: relative;
+            margin-top: 100px;
+            
+        }
+
+        .sidebar h1::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            border-left: 5px solid var(--main-color);
+            border-bottom: 5px solid var(--main-color);
+            bottom: -10px;
+            left: -10px;
+
+        }
+
+        .sidebar h1::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            border-top: 5px solid var(--main-color);
+            border-right: 5px solid var(--main-color);
+            position: absolute;
+            right: -10px;
+            top: -10px;
+
+        }
+
+        .sidebar ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .sidebar ul i {
+            margin-right: 10px;
+        }
+
+
+        li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        #open-sidebar {
+            position: fixed;
+            color: var(--text-color);
+            top: 25px;
+            left: 25px;
+            font-size: 25px;
+        }
+
+        .outside {
+            left: -250px;
+
+        }
+
+        h2 {
+            margin: 2px auto;
+        }
+
+        .change-color {
+            width: 200px;
+            height: 130px;
+            background-color: gray;
+            position: fixed;
+            right: -160px;
+            top: 100px;
+            transition: .6s;
+            display: flex;
+            border-top-left-radius: 20px;
+        }
+
+        .change-color span {
+            width: 30px;
+            height: 50px;
+            position: absolute;
+            top: 45px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            left: 10px;
+            color: white;
+        }
+
+        #button {
+            position: absolute;
+            left: 40px;
+            font-size: 10px;
+        }
+        #button h1{
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        #button button{
+            margin-left: 5px;
+        }
+        
+
+
+        .change-color button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: transparent;
+
+        }
+
+        .color-inside {
+            width: fit-content;
+            transition: ease-in-out 1.2s;
+            cursor: pointer;
+            transform-origin: center;
+        }
+
+        .color-inside:hover {
+            transform: rotate(360deg);
+        }
+
+
+        .inside-color-bar {
+            right: 0px;
+        }
+
+
+
+        .main-content {
+            position: reletive;
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .img {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(2, 26, 26);
+            margin-right: 50px;
+
+
+
+        }
+
+        img {
+            width: 300px;
+            height: 250px;
+
+        }
+
+        .h1 {
+            width: fit-content;
+            font-family: "Poppins", sans-serif;
+
+            padding-left: 20px;
+
+        }
+
+        .button {
+            border-radius: 30px;
+            background-color: var(--main-color);
+            width: 180px;
+            height: 60px;
+            padding: 20px auto;
+            outline: none;
+            border: none;
+        }
+        .button a{
+            color: white;
+            font-size: 18px;
+             text-decoration: none; 
+        } 
+
+
+
+        .span {
+            color: var(--main-color);
+            font-family: "Qwitcher Grypen", cursive;
+            font-size: 45px;
+        }
+        #span {
+            color: var(--main-color);
+        }
+
+        li a:hover {
+            color: var(--main-color);
+        }
+
+        .Anonymouse:hover {
+            color: var(--main-color);
+        }
+        .img::before{
+            position: absolute;
+            content: ' ';
+            width: 80px;
+            height: 80px;
+            border-left: 6px solid var(--main-color);
+            border-top: 6px solid var(--main-color);
+        }
+        .img::after{
+            position: absolute;
+            content: ' ';
+            width: 80px;
+            height: 80px;
+            border-right: 6px solid var(--main-color);
+            border-bottom: 6px solid  var(--main-color);
+            top: 430px;
+            right: 48px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <i class="fa-solid fa-bars" onclick="myfunc()" id="open-sidebar"></i>
+    <div class="change-color">
+
+        <span><i class="fa-solid fa-gear color-inside" onclick="side()"></i> <i
+                class="fa-solid fa-sun dark-light"></i></span>
+        <div id="button">
+            <h1><b> Change Theme</b></h1>
+            <button style="background-color: crimson;" onclick="handleMainColor('crimson')"></button>
+            <button style="background-color: aqua" onclick="handleMainColor('aqua')"></button>
+            <button style="background-color: yellowgreen" onclick="handleMainColor('yellowgreen')"></button>
+            <button style="background-color: hotpink;" onclick="handleMainColor('hotpink')"></button><br>
+            <button style="background-color: orange" onclick="handleMainColor('orange')"></button>
+            <button style="background-color: lightseagreen;" onclick="handleMainColor('lightseagreen')"></button>
+            <button style="background-color: tomato" onclick="handleMainColor('tomato')"></button>
+            <button style="background-color: yellow" onclick="handleMainColor('yellow')"></button>
+        </div>
+
+    </div>
+
+
+
+    <div class="sidebar">
+        <span onclick="myfunc()"><i class="fa-solid fa-xmark"></i></span>
+        <h1 class="Anonymouse"> Anonymouse</h1>
+        <ul>
+            <li><a href="#" style="color: var(--main-color);"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="#"><i class="fa-solid fa-user"></i> About</a></li>
+            <li> <a href="#"><i class="fa-solid fa-server"></i> Services</a></li>
+            <li><a href="#"> <i class="fa-solid fa-briefcase"></i>Portfolio </a></li>
+            <li><a href="#"> <i class="fa-solid fa-comments"></i>Contact Me</a></li>
+
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="h1">
+            <h1> Hello, my name is<span class="span"> Shivani Singh</span><br>I'm a<span id="span"> web
+                    devloper</span></h1><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt earum iste beatae nihil quidem id animi
+            tempora, omnis et quisquam provident atque quibusdam illum nostrum odit eligendi accusantium? Id,
+            voluptate!<br><br>
+            <button class="button"><a href="#">More About Me</a></button>
+        </div>
+        <div class="img"> <img
+                src="https://png.pngtree.com/png-vector/20240529/ourmid/pngtree-indian-office-girl-wearing-formal-black-and-white-dress-with-long-png-image_12502567.png"
+                alt="">
+        </div>
+    </div>
+    <script>
+        let cls = document.getElementsByClassName("sidebar")[0]
+        let body = document.querySelector("body")
+        console.log(cls)
+        function myfunc() {
+            cls.classList.toggle("outside")
+            body.classList.toggle("content-without-sidebar")
+        }
+        let color = document.querySelector(".change-color")
+
+        console.log(color)
+        function side() {
+            color.classList.toggle("inside-color-bar")
+        }
+        let btn = document.querySelector(".dark-light")
+        console.log(btn, "hello");
+
+        btn.addEventListener("click", function () {
+            console.log("working");
+
+            body.classList.toggle("light")
+            cls.classList.toggle("light")
+
+            if(btn.classList.contains("fa-sun")){
+                btn.classList.add("fa-moon")
+                btn.classList.remove("fa-sun")
+            }
+            else{
+                btn.classList.add("fa-sun")
+                btn.classList.remove("fa-moon")
+            }
+    
+        })
+
+
+        function handleMainColor(color){
+            body.style.setProperty("--main-color",color)
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

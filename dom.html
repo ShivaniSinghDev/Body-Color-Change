@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            border: 2px solid salmon;
+            width: fit-content;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 id="go" class="heading"> hello world</h1>
+    <h2 class="heading">Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, unde? </p> -->
+
+
+    <!-- <h1 id="head"> Hello Word</h1>
+    <div class="box">
+    <div class="B">B </div>
+    <div class="C" id="child">C </div>
+    <div class="D">D</div>
+    <div class="box">E</div>
+    </div> -->
+    <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente praesentium exercitationem sint velit, odit labore architecto quibusdam nemo ducimus at repudiandae eos fugiat, amet quis laudantium, consequatur obcaecati dolorem?</p>
+    <button> click me</button> -->
+     <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum perferendis laborum modi. Aperiam, similique consectetur. Alias ullam autem consectetur aut accusamus dignissimos velit quam provident consequuntur quo repellat, saepe sit.</p> -->
+    <form>
+        <br>
+         name: <input type="text" id="name"><br><br><br>
+         mobile:<input type="number"><br><br><br>
+         message: <textarea></textarea><br><br><br>
+         Email: <input type="email"><br><br><br>
+         favourite color: <input type="color"> <br> <br>
+         choose city: <select>
+             <option value="agra">Agra</option>
+             <option value="mathura">Mathura</option>
+             <option value="vrindavan">Vrindavan</option>
+             <option value="Noida">Noida</option>
+            </select>                   <br> <br>
+            
+            
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+    </form>
+    <h1 id="cityValue"> hello</h1>
+    
+    
+    
+    <script>
+        let name =document.querySelector("#name")
+        console.log(name)
+
+
+
+        //focus
+        // name.addEventListener("blur",function(){
+        //     this.style.backgroundColor="yellow"
+        // })
+        // name.addEventListener("focus",function(){
+        //     this.style.backgroundColor="blue"
+        // })
+    //  let text=document.querySelector("textarea")
+    //      console.log(text)
+    //  text.addEventListener("input",function(){
+    //      console.log(text.value)
+    //      })    
+
+
+
+        //  let color=document.querySelector(`input[type="color"]`)
+        // let body=document.querySelector("body")
+        //  console.log(color)
+
+
+        // color.addEventListener("change",function(){
+        //    console.log(this.value)
+        //     body.style.backgroundColor=this.value
+        //   })
+        // let city = document.querySelector("select")
+        // let cityValue = document.querySelector("#cityValue")
+
+        // console.log(city,cityValue);
+
+        // city.addEventListener("change",function(){
+        //     cityValue.innerText = this.value
+        // })
+        // let mobileInput = document.querySelector(`input[type="number"]`)
+
+        // console.log(mobileInput);
+
+        // mobileInput.addEventListener("change",function(){
+        //     console.log(this.value);  
+        // })
+        //  //select
+        //  let textarea=document.querySelector("textarea")
+        //  console.log(textarea)
+        //  textarea.addEventListener("select",function(){
+        //     alert("text is select")
+        //  })
+        //  // submit
+          let form= document.querySelector("form")
+          console.log(form)
+          form.addEventListener("submit", function(e){
+             e.preventDefault()
+             alert("form is submit")
+         })
+        //  //invalid
+        //  form.addEventListener("invalid",function(){
+        //     alert(" some field is invalid")
+        //  })
+
+    </script>
+
+
+
+
+</body>
+</html>

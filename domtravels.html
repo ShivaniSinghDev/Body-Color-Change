@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            flex-direction: column;
+        }
+        .A{
+            border: 2px solid salmon;
+            display: flex;
+            width: fit-content;
+            gap: 20px;
+            padding: 60Px;
+            background-color: lightseagreen;
+        }
+        .A div{
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <h1 id="head"> Hello Word</h1>
+    <div class="A">
+    <div class="B">B </div>
+    <div class="C" id="child">C </div>
+    <div class="D">D</div>
+    <div class="E">E</div>
+    </div>
+    <script>
+        let value=document.getElementById("head")
+        let parent=document.getElementsByClassName("A")[0]
+        console.log(head);
+        console.log(parent);
+        let message=head.innerText
+         let first=parent.firstElementSibling
+          console.log(first);
+        first.innerText = message
+
+
+    </script>
+</body>
+</html>

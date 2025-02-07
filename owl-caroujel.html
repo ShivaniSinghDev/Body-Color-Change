@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        /* color: white; */
+
+    }
+    .box{
+        height: 500px;
+        width: 500px;
+        
+
+    }
+    .box1{
+        
+        background-image: url("https://ih1.redbubble.net/image.2281713952.7800/st,small,845x845-pad,1000x1000,f8f8f8.u1.jpg");
+        background-position: center;
+        background-size: cover;
+        border: 8px double blue;
+        margin: 50px auto;
+        border-radius: 8%;
+        box-shadow:  5px 5px 10px rgb(137, 6, 224); 
+
+    }
+
+    .box1:hover{
+        transform: rotate(360deg);
+        transition: 20s;
+        border: 8px dotted rgb(139, 134, 143);
+
+          
+
+    }
+        
+    .box2{
+        background-image: url("https://images.pexels.com/photos/15239/flower-roses-red-roses-bloom.jpg?cs=srgb&dl=pexels-pixabay-15239.jpg&fm=jpg");
+        background-position: center;
+        background-size: cover;
+        margin: 50px auto;
+        border-radius: 20%;
+        border: 10px  double red
+    
+    }
+    .box2:hover{
+       transform: perspective(700px) rotate(0deg) translate3d(30px,30px,30px);
+
+    }
+
+    .box3{
+        margin: 50px auto;
+        border-radius: 50%;
+        background-image: url("https://pxboom.com/wp-content/uploads/2024/02/nice-cute-whatsapp-dp-1024x1024-1.jpg");
+        background-position: center;
+        background-size: cover;
+        border: 10px solid rgb(247, 146, 216);
+        
+    }
+    .box3:hover{
+        transform: rotateX(360deg);
+        transition: 5s;
+
+    }
+    .beautiful{
+        margin-left: 430px;
+
+
+    }
+    .box4{
+        margin: 50px auto;
+         background-size: cover;
+         background-repeat: no-repeat;
+    }
+     video{
+        width:480px ;
+        height: 480px;
+        
+     }
+     .NAME{
+        margin-left: 460px;
+
+     }
+       
+       h1{
+           margin-left: 550px;
+
+       }
+   
+    .box5{
+        background-image: url("https://media.istockphoto.com/id/506340238/photo/pc-room.jpg?s=612x612&w=0&k=20&c=hClJ3bjnW6n8gXSNbotpe520ofrREJYlJNMElU5CWJA=");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 50px auto;
+        border: 8px solid rgb(73, 9, 2);
+        border-radius: 3%;
+
+    }
+
+    .box5:hover{
+        transform: rotateY(360deg);
+        transition: 5s;
+
+    }
+    .COMPUTER{
+        margin-left: 480px;
+    }
+
+    .box6{
+        
+        background-image: url("https://cdn11.bigcommerce.com/s-outfnjrzch/images/stencil/1280x1280/products/31083/79837/PINKShivani__45030__49474.1540034240.jpg?c=2&imbypass=on");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 50px auto;
+        border: 12px dotted hotpink;
+        border-radius: 12%;
+
+    
+    }
+
+    
+
+
+
+    </style>
+    
+
+</head>
+<body>
+
+    <div class="owl-carousel owl-theme">
+        <div class="item"> 
+            <div class="box1 box"> </div>
+        </div>
+
+
+        <div class="item"> 
+            <div class="box2 box"></div> <h1> THIS IS RED ROSE </h1>
+        </div>
+
+
+        <div class="item"> 
+            <div class="box3  box"></div><h1 class="beautiful" > THIS IS VERY BEAUTIFUL IMAGE</h1>
+        </div>
+
+        <div class="item"> 
+            <div class="box4  box">
+                <video src="video.mp4" controls muted></video> 
+
+                
+            </div>
+            <h1 class="NAME"> MY NAME IS SHIVANCE</h1>
+        </div>
+
+        <div class="item"> 
+            <div class="box5  box"></div><h1 class="COMPUTER"> THIS IS COMPUTER LAB</h1>
+        </div>
+
+
+        <div class="item"> 
+            <div class="box6  box"></div>
+        </div>
+        
+
+
+
+        
+        
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"> </script>
+    <script>   
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+
+
+
+    </script>
+    
+</body>
+</html>

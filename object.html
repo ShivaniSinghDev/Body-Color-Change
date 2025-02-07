@@ -1,0 +1,99 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> hello world</h1>
+    <script>
+        // let student=["sumit",21,"bcom","pune"]
+        // let student1={
+        //     name:"sumit",
+        //     rollno:"21",
+        //     class:"bcom",
+        //     address:"mathura",
+        // }
+        // console.log(student)
+
+        // console.log(student1.class)
+        // let employee=new Object(name=shivani,)
+        // console.log(employee)++
+        // let employee = {
+        //     id:"E35",
+        //     name:"aman",
+        //     sector:"IT",
+        //     address:"pune"
+        // }
+
+        // console.log(employee);
+        // let employeeSector = employee.sector
+        //  console.log("the address of the emoployee is "+ employee.address);
+        //  console.log( employeeSector)
+         //changeing the value
+        //  employee.name="shivani"
+        //  console.log(employee)
+        //  let studen = {
+        //     name:"aman",
+        //     course:"BCom",
+        //     address:{
+
+        //         city:"Mathura",
+        //         state:"Uttar Pradesh",
+        //         pincode:281004
+        //     }
+        // }
+
+        // console.log(studen.address.state);
+
+
+
+        //mrthod()
+            let obj = {
+            name:"Sumit",
+            age:22,
+            valid:true,
+            scope:undefined,
+            network:null,
+            anyInt:67n,
+            subjects:["hindi","english"],
+            address:{
+                city:"Mathura",
+                pincode:281003,
+                state:"Uttar Pradesh",
+                getState:function(){
+                    console.log(this.state);   
+                }
+            }
+        
+    
+         //symbol:Symbol("any")
+
+    // func1:function(){
+    //      console.log("Hello World");    
+    //     console.log(this.state);
+    // },
+
+    func2:()=>{
+         console.log("I am Arrow Function");
+        console.log(this);  
+    },
+}
+
+// obj.func1()
+
+obj.func2()
+
+obj.address.getState()
+
+    </script>
+
+
+
+</body
+</html>

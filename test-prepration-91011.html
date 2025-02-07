@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head{
+            width: 200px;
+            height: 100px;
+            background-color: yellowgreen;
+            margin: 50px auto;
+        }
+    </style>
+ 
+</head>
+<body>
+
+        <div id="head">Hello world</div>
+        <button>click me</button>
+<script>
+
+//9 topic
+//parentElement
+//children
+//fristElement
+//lastElement
+//nextElementchild
+//previousElementchild
+     //10 topic
+    // a=newElement
+    //  let newElement=document.createElement("h1")
+    //  console.log(newElement);
+
+    //b createtextnode
+    //let text=document.createTextNode("hello shivani singh")
+    //console.log(text);
+    //let vari=text
+    //console.log(vari)
+    //append child
+    // newElement.appendChild(text)
+    // console.log(newElement);
+    //insert adjacentElement
+    // let head=document.querySelector("#head")
+    // console.log(head)
+    // head.insertAdjacentElement("afterbegin",newElement)
+    let button=document.querySelector("button")
+    console.log(button)
+    // function abc (){
+    //     alert("welcome")
+
+    // }
+     //addEventListener
+    //  function handleclick(){
+    //     console.log("are you sure ")
+    //  }
+    // button.addEventListener("click",()=>{
+    // })
+
+    // let newfunction =()=>{
+    // alert("hi this is shivani singh")
+
+    // }
+    // button.addEventListener("mouseenter",newfunction)
+    // button.removeEventListener("mouseenter",newfunction)
+   button.addEventListener("focus", function(){
+   this.style.backgroundColor="pink"
+   
+   })
+   button.addEventListener("input", function(){
+   console.log(this.value)
+//    })
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html> 

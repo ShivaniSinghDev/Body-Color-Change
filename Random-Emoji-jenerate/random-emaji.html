@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-box {
+            width: 400px;
+            height: 400px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 50px auto;
+            border-radius: 10px;
+             box-shadow: 10px 10px 10px rgb(22, 22, 22) 
+    
+
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 5px double blueviolet;
+            background-color: black;
+            color: white;
+        }
+     
+        .emoji{
+        
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px auto;
+            padding: 20px ;
+            border-radius: 20px;
+          
+        }
+        span{
+            font-size: 50px;
+        }
+        .title{
+            padding-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-box">
+
+        <h1> Random Emoji Generator</h1>
+        <div class="emoji">
+            <span></span>
+            <div class="title"></div>
+        </div>
+        <button onclick="generateEmoji()"> Genrate</button>
+        <script>
+            let span = document.querySelector("span")
+            let title = document.querySelector(".title")
+            let emoji = document.querySelector(".emoji")
+
+            let myData = []
+
+            let url = ("https://emoji-api.com/emojis?access_key=a466a6803d918385648e062d4e5ab65edf2c9dc7")
+
+            fetch(url)
+                .then((data) => {
+                    return data.json()
+                })
+                .then((response) => {
+                    // console.log(response);
+
+                    for (let i = 0; i <= 99; i++) {
+                        myData.push(response[i])
+                    }
+
+                    console.log(myData);
+
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+
+                function generateEmoji(){
+                    let randonIndex = Math.floor(Math.random()*100)
+                    console.log(randonIndex);
+
+                    let choosedEmoji = myData[randonIndex]
+                    console.log(choosedEmoji);
+
+                    span.innerText = choosedEmoji.character
+                    title.innerText = choosedEmoji.subGroup
+                    emoji.style.border= "4px double skyblue"
+                    
+                }
+            
+
+
+
+        </script>
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

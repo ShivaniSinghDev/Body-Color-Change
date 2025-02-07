@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let massage="HI DIVYA  this is shivani singh"
+        // srtlength=massage.length
+        // console.log(massage)
+        // touppercase
+        // console.log(massage.toLowerCase())
+        // inscludes
+        // console.log(massage.endsWith("H"))
+        // startwiths()
+        // let message = 'Javascript is a Scripting Language'
+
+        // let isStart = message.startsWith("J")
+
+        // console.log(isStart);
+        //index off
+        // console.log(massage.lastIndexOf("s"))
+
+        //replace()
+        // let message = 'Javascript is a Scripting Language'
+
+        // let newMessage = message.replace("Scripting","Programming")
+        //  = message.replace("Java","Type")
+        // console.log(newMessage)
+
+        //  console.log(message.charCodeAt(2))
+        //  let message = 'Javascript is a Scripting Language'
+        //          let message1 = " and a programming language"
+        //          let message2 = " which is used for event handling."
+
+        //         let newMessage = message.concat(message1,message2)
+
+        //          console.log(newMessage);
+
+        // let message = 'Javascript is a Scripting Language'
+
+        //         // let arr1 = message.split("a")
+
+        //           console.log(message.substr(-7,5));
+
+
+
+        //           let num = ["name ","sumit"]
+
+        //           console.log(num);
+
+
+        //            let newNumber = num.toString()
+
+        //             console.log(newNumber);
+        // function sayHello() {
+        //   console.log('Hello');
+        // }
+
+        // delay for 2 seconds only.
+        // setInterval(sayHello, 2000);
+        // let num = 0
+
+
+        // setInterval(function(){
+        //     console.log(++num+ " Hello World");  
+        // },1000)
+
+
+
+        // setTimeout(() => {
+        //     console.log( ++num+ "Good Morning");
+        // }, 2000)
+
+
+        // let myIntervel = setInterval(()=>{
+        //     console.log("Hello");
+        // },2000)
+
+        // setTimeout(() => {
+        //     clearInterval(myIntervel)
+        // }, 8000);
+        // let myTimeout = setTimeout(() => {
+        //console.log("Hello");
+        // }, 5000);
+
+
+
+        // let num = +prompt("Enter your number: ")
+
+        // let myIntervel =  setInterval(() => {
+        //     console.log(num--);
+        //     if(num==0){
+        //         clearInterval(myIntervel)
+        //         alert("hello")
+        //     } 
+        // }, 1000);
+        // let myTimeout = setTimeout(() => {
+        //   console.log("Hello");
+        //       }, 5000);
+
+
+        // setTimeout(() => {
+        //    clearTimeout(myTimeout)
+        // }, 8000);
+        // let Objects= new Date();
+        // let year=Objects.getMilliseconds()
+        // document.write(year)
+
+        //let number=Math.ceil(5.75)
+        //console.log(number) let number = Math.PI
+        // console.log(number);
+
+        // let number = Math.PI
+        //  console.log(number);
+
+        //  let number = Math.abs(5)
+        //  let number1 = Math.abs(-5)
+        //  console.log(number)
+        //  console.log(number1)
+        // let number = Math.sqrt(49)
+        //  console.log(number);
+        // let num1 = Math.pow(4,2)
+
+        // let num2 = Math.sqrt(num1)
+
+        // console.log(num2);
+
+        // let num3 = Math.pow(num2,2)
+        // let num4 = Math.sqrt(num3)
+        // let number = Math.sqrt(49)
+        //  console.log(number);
+
+        /*let mypromise=new Promise((resolve,reject)=>{
+            let success=false;
+            if(success){
+                resolve("Operation successful");
+                console.log(resolve)
+
+            }else{
+                reject("operation failed");
+            }
+
+        })
+        .then(result=>{
+            console.log(result)
+        })
+        .catch(error=>{
+            console.log(error)
+        })*/
+
+
+        //data 
+
+        /*let url = "https://jsonplaceholder.typicode.com/posts"
+        fetch(url)
+        .then((data)=>{
+            return data .json()
+
+        })
+        .then((response)=>{
+            console.log(response)
+    
+        response.forEach((item)=>{
+            document.write("Userid:"+item.id + "<br>")
+            document.write("user Title:"+item.title + "<br>")
+        })
+    })
+    .catch((error)=>{
+        console.log(error)
+    })*/
+
+        //pincode
+
+
+        // let pincode = +prompt("Enter your pin code")
+        // let url = (`https://api.postalpincode.in/pincode/${pincode}`)
+        /*fetch(url)
+            .then((data) => {
+                return data.json()
+
+            })
+            .then((response) => {
+                // console.log(response[0].PostOffice[1].Block)
+                let mainData = response[0].PostOffice[0]
+                console.log(mainData);
+
+
+                let city = mainData.Block
+                let state = mainData.State
+                let country = mainData.Country
+                console.log(city, state, country);
+
+            })
+            .catch((error) => {
+                console.log(error)
+            })*/
+
+        //     async function hello() {
+        //     let myPromise = new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve("I am full filled")
+        //         }, 4000);
+        //     })
+
+        //     console.log("data is fetching....");
+
+        //     let result = await myPromise
+
+        //     console.log(result);
+
+        // }
+
+        // hello()
+        // async function getData() {
+        //     let url = "https://jsonplaceholder.typicode.com/todos"
+
+        //     let data = await fetch(url)
+
+        //     let response = await data.json()
+
+        //     console.log(response);
+        // }
+
+        // getData()
+
+
+
+
+        async function getData() {
+            try {
+                let url = "https://jsonplaceholder.typicode.com/todos"
+
+                let data = await fetch(url)
+                let result = await data.json()
+                console.log(result);
+            }
+            catch (error) {
+                console.log("There is an error : " + error);
+
+            }
+        }
+
+        getData()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
